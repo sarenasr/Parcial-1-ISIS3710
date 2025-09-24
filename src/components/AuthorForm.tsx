@@ -107,35 +107,56 @@ export default function AuthorForm({ authorId, onSuccess }: AuthorFormProps) {
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="flex flex-col">
-          <label className="mb-1 font-medium">Name</label>
-          <input {...register("name")} className="border border-gray-300 p-2 rounded" />
+          <label className="mb-1 font-medium">Name *</label>
+          <input 
+            {...register("name", { required: "Name is required" })} 
+            className="border border-gray-300 p-2 rounded" 
+          />
+          {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
         </div>
         
         <div className="flex flex-col">
-          <label className="mb-1 font-medium">Date of Birth</label>
+          <label className="mb-1 font-medium">Date of Birth *</label>
           <input 
             type="date" 
-            {...register("birthDate", { required: true })} 
+            {...register("birthDate", { required: "Date of birth is required" })} 
             className="border border-gray-300 p-2 rounded"
           />
+          {errors.birthDate && <span className="text-red-500 text-sm">{errors.birthDate.message}</span>}
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1 font-medium">Description</label>
-          <input {...register("description")} className="border border-gray-300 p-2 rounded" />
+          <label className="mb-1 font-medium">Description *</label>
+          <input 
+            {...register("description", { required: "Description is required" })} 
+            className="border border-gray-300 p-2 rounded" 
+          />
+          {errors.description && <span className="text-red-500 text-sm">{errors.description.message}</span>}
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1 font-medium">Image URL</label>
-          <input {...register("image")} className="border border-gray-300 p-2 rounded" />
+          <label className="mb-1 font-medium">Image URL *</label>
+          <input 
+            {...register("image", { required: "Image URL is required" })} 
+            className="border border-gray-300 p-2 rounded" 
+          />
+          {errors.image && <span className="text-red-500 text-sm">{errors.image.message}</span>}
         </div>
         <div className="flex flex-col">
-          <label className="mb-1 font-medium">Book</label>
-          <input {...register("book")} className="border border-gray-300 p-2 rounded" />
+          <label className="mb-1 font-medium">Book *</label>
+          <input 
+            {...register("book", { required: "Book is required" })} 
+            className="border border-gray-300 p-2 rounded" 
+          />
+          {errors.book && <span className="text-red-500 text-sm">{errors.book.message}</span>}
         </div>
         <div className="flex flex-col">
-          <label className="mb-1 font-medium">Prize</label>
-          <input {...register("prize")} className="border border-gray-300 p-2 rounded" />
+          <label className="mb-1 font-medium">Prize *</label>
+          <input 
+            {...register("prize", { required: "Prize is required" })} 
+            className="border border-gray-300 p-2 rounded" 
+          />
+          {errors.prize && <span className="text-red-500 text-sm">{errors.prize.message}</span>}
         </div>
 
 

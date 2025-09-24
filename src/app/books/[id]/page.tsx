@@ -108,7 +108,6 @@ export default function BookDetail() {
             <ul>
               {book.reviews.map((review) => (
                 <li key={review.id} className="py-3 border-b border-gray-200">
-                  <p className="text-sm font-medium">{review.stars}/5 stars</p>
                   <p className="text-sm text-gray-600">{review.description}</p>
                 </li>
               ))}
