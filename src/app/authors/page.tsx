@@ -68,8 +68,10 @@ const handleDelete = async (authorId: number) => {
   }
 
   return(
-    <div className="flex justify-start items-center min-h-screen bg-gray-100">
-     <ul>
+    <div className="min-h-screen bg-gray-100">
+      <h1 className="text-2xl font-bold p-6">Authors</h1>
+      <div className="flex justify-start items-center">
+        <ul>
       {authors.map((author) => (
         <li key={author.id} className="flex justify-between gap-x-6 py-5">
           <div className="flex min-w-0 gap-x-4">
@@ -99,7 +101,8 @@ const handleDelete = async (authorId: number) => {
           </div>
         </li>
       ))}
-    </ul>
+        </ul>
+      </div>
     </div>
   )
 

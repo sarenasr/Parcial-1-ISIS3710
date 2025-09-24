@@ -7,6 +7,7 @@ export default function Navbar() {
     const navItems = [
   { name: 'Authors', href: '/authors' },
   { name: 'Create', href: '/create' },
+  { name: 'Books', href: '/books' },
 
 ]
   return (

@@ -7,6 +7,8 @@ type Inputs = {
   birthDate: string
   description: string
   image: string
+  book: string
+  prize: string
 }
 
 interface AuthorFormProps {
@@ -46,6 +48,8 @@ export default function AuthorForm({ authorId, onSuccess }: AuthorFormProps) {
       setValue('birthDate', author.birthDate);
       setValue('description', author.description);
       setValue('image', author.image);
+      setValue('book', author.book || '');
+      setValue('prize', author.prize || '');
       
     } catch (error) {
       console.error('Error fetching author:', error);
@@ -125,6 +129,15 @@ export default function AuthorForm({ authorId, onSuccess }: AuthorFormProps) {
           <label className="mb-1 font-medium">Image URL</label>
           <input {...register("image")} className="border border-gray-300 p-2 rounded" />
         </div>
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Book</label>
+          <input {...register("book")} className="border border-gray-300 p-2 rounded" />
+        </div>
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Prize</label>
+          <input {...register("prize")} className="border border-gray-300 p-2 rounded" />
+        </div>
+
 
         <input 
           type="submit" 
